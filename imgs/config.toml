@@ -1,0 +1,52 @@
+main.name = "pwnagotchi"
+main.lang = "en"
+main.whitelist = [
+"348wifi",
+  "348wifi_5G"
+]
+
+main.plugins.grid.enabled = true
+main.plugins.grid.report = true
+main.plugins.grid.exclude = [
+  "YourHomeNetworkHere"
+]
+
+ui.display.enabled = true
+ui.display.type = "waveshare_3"
+ui.display.color = "black"
+
+# advertise our presence
+personality.advertise = true
+# perform a deauthentication attack to client stations in order to get full or half handshakes
+personality.deauth = true
+# send association frames to APs in order to get the PMKID
+personality.associate = true
+# list of channels to recon on, or empty for all channels
+personality.channels = []
+# minimum WiFi signal strength in dBm
+personality.min_rssi = -200
+# number of seconds for wifi.ap.ttl
+personality.ap_ttl = 120
+# number of seconds for wifi.sta.ttl
+personality.sta_ttl = 300
+# time in seconds to wait during channel recon
+personality.recon_time = 30
+# number of inactive epochs after which recon_time gets multiplied by recon_inactive_multiplier
+personality.max_inactive_scale = 2
+# if more than max_inactive_scale epochs are inactive, recon_time *= recon_inactive_multiplier
+personality.recon_inactive_multiplier = 2
+# time in seconds to wait during channel hopping if activity has been performed
+personality.hop_recon_time = 10
+# time in seconds to wait during channel hopping if no activity has been performed
+personality.min_recon_time = 5
+# maximum amount of deauths/associations per BSSID per session
+personality.max_interactions = 3
+# maximum amount of misses before considering the data stale and triggering a new recon
+personality.max_misses_for_recon = 5
+# number of active epochs that triggers the excited state
+personality.excited_num_epochs = 10
+# number of inactive epochs that triggers the bored state
+personality.bored_num_epochs = 15
+# number of inactive epochs that triggers the sad state
+personality.sad_num_epochs = 25
+dtoverlay=dwc2
